@@ -6,3 +6,4 @@ Changes made:
 - syscall.h, syscall.c, sysproc.c, user.h, usys.S: added system calls for sem_init, sem_wait, sem_post.
 - synctest.c: user program that uses 3 semaphores to print A B C 5 times in order across 3 child processes.
 - Makefile: added sem.o to OBJS and _synctest to UPROGS.
+- Nishchay, 2401MC22, everyone got the same set.
