@@ -89,3 +89,27 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+int sys_sem_init(void)
+{
+  int id, val;
+  if(argint(0, &id) < 0 || argint(1, &val) < 0)
+      return -1;
+  return sem_init(id, val);
+}
+
+int
+sys_sem_wait(void)
+{
+    int id;
+    if(argint(0, &id) < 0) return -1;
+    return sem_wait(id);
+}
+
+int sys_sem_post(void)
+{
+  int id;
+  if (argint(0, &id) < 0)
+    return -1;
+  return sem_post(id);
+}
